@@ -1,0 +1,15 @@
+---
+layout: default
+title: Jules Boussekeyt
+my_github: https://github.com/gordonslondon
+---
+
+{% for post in site.posts %}
+    <article class="article">
+        <hgroup>
+            <h2><a href=".{{ post.url }}" rel="bookmark" title="{{ post.title }}">{{ post.title }}</a></h2>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date_to_string }}</time>
+        </hgroup>
+        <p class="content">{{ post.content | strip_html | truncate: 200 }}</p>
+    </article>
+{% endfor %}

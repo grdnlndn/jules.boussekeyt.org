@@ -1,0 +1,4 @@
+safe: true
+permalink: /:year/:title.html
+pygments: true
+markdown: redcarpet
