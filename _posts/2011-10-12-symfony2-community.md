@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: other
-title: What Symfony2 teach me
+title: What Symfony2 teach me during a year
 ---
 
 ![Symfony2 logo](/assets/images/2011-symfony2-community/symfony2.gif)
