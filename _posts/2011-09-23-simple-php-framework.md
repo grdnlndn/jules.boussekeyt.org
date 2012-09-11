@@ -5,7 +5,7 @@ title: SimpleFramework - PHP framework
 ---
 
 <a title="visit SimpleFramework website" target="_blank" href="http://simple-php-framework.org/">
-<img alt="Simple framework logo" src="/images/2011-simple-php-framework.png" />
+<img alt="Simple framework logo" src="/assets/images/2011-simple-php-framework.png" />
 </a>
 
 Frameworks are great, they help you to build things fast, secured and maintainable. They provide you tools to do things sometimes you don't want to do by yourself, like authentication, forms, ORM .. 

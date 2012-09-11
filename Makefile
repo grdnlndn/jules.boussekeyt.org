@@ -1,3 +1,3 @@
 all:
 	jekyll
-	recess --compress css/style.less > css/style.css
+	recess --compress assets/css/style.less > assets/css/style.css

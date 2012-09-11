@@ -1,4 +1,4 @@
-![Symfony2 logo](/images/2011-symfony2-community/symfony2.gif)
+![Symfony2 logo](/assets/images/2011-symfony2-community/symfony2.gif)
 
 Symfony2 is the best framework I know, with it you can build the most complex application and also the smallest one. You can be sure that your code will be fast, easy to read, maintainable by other people, scalable, ... Symfony2 is a great community with experts and novices.
 
