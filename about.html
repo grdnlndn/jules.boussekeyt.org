@@ -12,11 +12,18 @@ socials:
   - type: linkedin
     username: julesboussekeyt
     url: "http://www.linkedin.com/in/julesboussekeyt"
+projects:
+  - name: SimpleFramwork
+    description: Simplest PHP Framework
+  - name: Oklit
+    description: PHP Blogging Platform - Markdown rendering, filesystem, upload, backup
+  - name: Gibot
+    description: Have a Github robot helping you in your OSS work
 ---
 
 <div class="profile">
     <div class="profile-img">
-        <img alt="gordonslondon" src="/images/me.jpg" width="140">
+        <img alt="gordonslondon" src="/assets/images/me.jpg" width="140">
     </div>
     <div class="profile-text">
         <p>
@@ -34,7 +41,7 @@ socials:
     {% for link in page.socials %}
         <div class="icon">
             <a href="{{ link.url }}">
-                <img src="/images/{{ link.type }}-icon.png" alt="{{ link.type }} {{ link.username }}">
+                <img src="/assets/images/{{ link.type }}-icon.png" alt="{{ link.type }} {{ link.username }}">
                 <span>@{{ link.username }}</span>
             </a>
         </div>
@@ -45,31 +52,14 @@ socials:
     <h3>My open-source projects</h3>
 
     <ul>
-<li>
-<a href="http://simple-php-framework.org/" target="_blank">SimpleFramework</a>: Simplest PHP Framework
-        </li>
-        <li>
-<a href="http://oklit.org/" target="_blank">Oklit</a>: PHP Blogging Platform for people who love code
-        </li>
-        <li>
-<a href="http://gibot.org/" target="_blank">Gibot</a>: Have a Github robot helping you in your OSS work
-        </li>
-        <li>
-<a href="https://github.com/hooty/filesystem.js" target="_blank">Filesystem.js</a>: Javascript File manager
-        </li>
-        <li>
-<a href="https://github.com/gordonslondon/DragAndDrop" target="_blank">DragAndDrop</a>: A small drag-drop app with a nice javascript
-        </li>
+        {% for project in page.projects %}
+            <li>
+                <a href="{{ project.link }}" target="_blank">{{ project.name }}</a>: {{ project.description }}
+            </li>
+        {% endfor %}
     </ul>
 </div>
 
-<div class="projects">
-<h3>My portofolio</h3>
-
-<ul>
-<li><a href="http://note-ton-ecole.fr" target="_blank">NoteTonEcole</a></li>
-        <li>
-<a href="http://thegoldiegirl.fr/" target="_blank">TheGoldieGirl</a> (Wordpress)</li>
-    </ul>
-</div>
-
+<script>
+  document.getElementById('eliam').innerHTML = ['jules', 'boussekeyt'].join('.') + '@' + ['gmail', 'com'].join('.')
+</script>
