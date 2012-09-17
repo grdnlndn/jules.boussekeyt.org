@@ -1,6 +1,7 @@
 name: Jules Boussekeyt - WebDev Blog
 description: A blog about Javascript, PHP, webdesign and above all web applications in general.
 url: http://jules.boussekeyt.org
+google_analytics: UA-19244753-1
 
 safe: true
 permalink: /:year/:title.html
