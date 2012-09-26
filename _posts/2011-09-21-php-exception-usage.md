@@ -4,7 +4,9 @@ tags: backend
 title: Different types of exceptions in php
 ---
 
-![differente types of php exceptions](/assets/images/2011-php-exception-usage/ghost_buster.jpeg)
+<figure>
+    <img src="/assets/images/2011-php-exception-usage/ghost_buster.jpeg" alt="differente types of php exceptions" />
+</figure>
 
 In this article we will see how to use some of the most widely used exception subclasses in PHP.
 

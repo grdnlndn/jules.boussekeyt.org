@@ -49,11 +49,9 @@ You can check the current version of your timezonedb with:
 <?php echo timezone_version_get() ?>
 {% endhighlight %}
 
-You will see a number like this 2012.9 wich correspond to a date.
-
-Sometime timezones are updated, if the package is older than one year, i suggest you update your timezonedb.
-
-You can install/update your timezonedb version by executing the following command on the terminal:
+You will see a number like this 2012.9 wich correspond to a date. Sometime timezones are updated, if 
+the package is older than one year, i suggest you update your timezonedb. You can install/update your 
+timezonedb version by executing the following command on the terminal:
 
 {% highlight bash %}
 $ sudo pecl install timezonedb

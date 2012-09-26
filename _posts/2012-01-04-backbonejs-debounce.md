@@ -47,6 +47,5 @@ window.MyView = Backbone.View.extend({
 
 You're done!
 
-Each time a key is pressed, the script waits for 800ms, and then calls `fetchApi`.
-
-If a key is pressed during these 800ms, the script waits for 800ms, again.
+Each time a key is pressed, the script waits for 800ms, and then calls `fetchApi`. If a key is pressed 
+during these 800ms, the script waits for 800ms, again.

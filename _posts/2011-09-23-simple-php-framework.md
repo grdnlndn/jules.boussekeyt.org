@@ -4,9 +4,11 @@ tags: backend
 title: SimpleFramework - PHP framework
 ---
 
-<a title="visit SimpleFramework website" target="_blank" href="http://simple-php-framework.org/">
-<img alt="Simple framework logo" src="/assets/images/2011-simple-php-framework/sf-logo.png" />
-</a>
+<figure>
+    <a title="visit SimpleFramework website" target="_blank" href="http://simple-php-framework.org/">
+        <img alt="Simple framework logo" src="/assets/images/2011-simple-php-framework/sf-logo.png" />
+    </a>
+</figure>
 
 Frameworks are great. They help you build secure and easily-maintainable applications fast. They provide you tools to do things sometimes you don't want to do by yourself, like authentication, forms, ORM, etc. 
 
