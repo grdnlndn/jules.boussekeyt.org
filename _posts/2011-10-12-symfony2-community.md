@@ -1,16 +1,15 @@
 ---
 layout: post
 tags: other
-title: What Symfony2 teach me during a year
+title: What Symfony2 taught me during a year
 ---
 
 ![Symfony2 logo](/assets/images/2011-symfony2-community/symfony2.gif)
 
-Symfony2 is the best framework I know, with it you can build the most complex application and also the smallest one. You can be sure that your code will be fast, easy to read, maintainable by other people, scalable, ... Symfony2 is a great community with experts and novices.
+Symfony2 is the best framework I know: whether you want to build the most complex applications or the simplest ones, it perfectly fits the bill. You can be sure that your code will be faster, easy to read, constantly maintainable by other community members, scalable, ... the list of its advantages goes on and on. Symfony2 is a great community with experts and novices.
 
-In this post I want to thank @fabpot, not just him but the whole Symfony2 community for teaching to developers some great philosophies and also some good principles. So keep up the good work!
+In this post I want to thank @fabpot, and in fact, not just him but the entire Symfony2 community for teaching developers some great philosophies and also some good principles. So keep up the good work!
 
-As an early adopter, I started to work on Symfony2 one year and a half ago and never have to regret it, it has been a big pleasure to work with and I still work on Symfony2 projects.
+As an early adopter, I started working on Symfony2 a-year-and-a-half ago and never since then have had to regret my decision. It has been a great pleasure to work with the community and I'm still working on multiple Symfony2 projects.
 
-__Long life to Symfony2 and his community !__ 
-
+__Long life to Symfony2 and its community !__ 

@@ -8,7 +8,7 @@ I've been trying to __delay an expensive search triggered by a `keyup` event__ w
 
 ### The problem
 
-I have a BackboneJS View, where each key pressed triggers `fetchApi` method:
+I have a BackboneJS View, where each key-press triggers the `fetchApi` method:
 
 {% highlight javascript %}
 window.MyView = Backbone.View.extend({
@@ -24,11 +24,11 @@ window.MyView = Backbone.View.extend({
 });
 {% endhighlight %}
 
-Unfortunately each time a key is pressed a call to the API is done. A better solution would be to wait that the user has finished typing.
+Unfortunately each time a key is pressed a call to the API is made. A better solution would be to wait till the user has finished typing.
 
 ### The solution
 
-With `debounce` method in [underscore.js](http://documentcloud.github.com/underscore/#debounce)  it's pretty easy to delay the `fetchApi` method, like this:
+With the `debounce` method in [underscore.js](http://documentcloud.github.com/underscore/#debounce)  it's pretty easy to delay the `fetchApi` method, like this:
 
 
 {% highlight javascript %}
@@ -46,6 +46,7 @@ window.MyView = Backbone.View.extend({
 {% endhighlight %}
 
 You're done!
-Each time a key is pressed, the script wait 800ms, then call `fetchApi`. 
-If a key is pressed durings these 800ms, the script wait 800ms again.
 
+Each time a key is pressed, the script waits for 800ms, and then calls `fetchApi`.
+
+If a key is pressed during these 800ms, the script waits for 800ms, again.

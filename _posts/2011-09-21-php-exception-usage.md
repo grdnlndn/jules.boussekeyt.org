@@ -6,13 +6,13 @@ title: Different types of exceptions in php
 
 ![differente types of php exceptions](/assets/images/2011-php-exception-usage/ghost_buster.jpeg)
 
-In this article we will see how to use some of the most widely used exception subclasses.
+In this article we will see how to use some of the most widely used exception subclasses in PHP.
 
 ## RuntimeException
 
 _An error occurred during the code execution._
 
-A use case is when there's a mistake during a database connection, we throw a runtime exception because the failure only occurs when we run the code :
+A usual case scenario is when there's a mistake during a database connection; we throw a runtime exception because the failure only occurs when we run the code :
 
 {% highlight php %}
 <?php
@@ -26,9 +26,9 @@ try {
 
 ## LogicException
 
-_You code is trying to do something illogical._
+_Your code is trying to do something illogical._
 
-You have a LogicException when there's an error in your code. For exemple we can't accelerate with a car if the engine is not started :
+You have a LogicException when there's a logic-related error in your code. For exemple we can't accelerate a car if the engine is not started :
 
 {% highlight php %}
 <?php
@@ -63,7 +63,7 @@ class Car
 
 _The key you're looking for is invalid._
 
-An OutOfBoundsException occurs when a key is invalid. Let's say we have a container to store objects :
+An OutOfBoundsException occurs when a key is invalid. Let's say we have a container to store objects:
 
 {% highlight php %}
 <?php
@@ -92,7 +92,7 @@ class Container
 
 _The argument you have provided is invalid._
 
-Let's say we have a bank account, in php we can't check if an argument is an integer, so we have to do some validation :
+Let's say we have a bank account, in PHP we can't check if an argument is an integer, so we have to do some validation :
 
 {% highlight php %}
 <?php
@@ -117,7 +117,7 @@ class BankAccount
 }
 {% endhighlight %}
 
-Now we can only provide an integer to the <code>credit</code> method :
+Now, we can provide an integer only to the <code>credit</code> method :
 
 {% highlight php %}
 <?php
@@ -131,7 +131,7 @@ $ba->credit('invalid value'); // throws InvalidArgumentException
 
 _There was an error._
 
-This exception can be used to register an error handler, that converts errors to exceptions :
+This exception can be used to register an error handler that converts errors to exceptions :
 
 {% highlight php %}
 <?php
@@ -148,7 +148,7 @@ set_error_handler(exception_error_handler);
 
 _The method you're trying to call is invalid._
 
-In Doctrine there a repository to fetch objects from your database, you can call methods like `findOneBySlug('php-exceptions')`. Doctrine makes a good usage of this method in the `EntityRepository` :
+In Doctrine there is a repository to fetch objects from your database. You can call methods like `findOneBySlug('php-exceptions')`. Doctrine makes a good usage of this method in the `EntityRepository` :
 
 {% highlight php %}
 <?php
@@ -177,4 +177,3 @@ class EntityRepository
 <hr/>
 
 Sources: [spl exceptions](http://www.php.net/manual/en/spl.exceptions.php)
-
