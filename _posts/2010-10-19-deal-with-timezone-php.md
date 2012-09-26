@@ -21,7 +21,9 @@ So the PHP interpreter makes sure you are not basing your date-based calculation
 
 A great thing about web-based applications is that they can be accessible and usable throughout the world and this means people from varying timezones will be accessing your application at the same time. They must be able to perform the date-based functions relative to a standard time zone to avoid confusion and miscalculations.  This is more so important when it is very critical to trigger particular actions based on local as well as international timings.
 
-![Timezones World Map](/assets/images/2010-deal-with-timezone-php/timezone.jpg)
+<figure>
+    <img src="/assets/images/2010-deal-with-timezone-php/timezone.jpg" alt="Timezones World Map" />
+</figure>
 
 Coming back to the PHP part. It's not really difficult to deal with timezones in PHP. But there's some common mistakes that you can avoid with simple tips.
 
