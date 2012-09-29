@@ -6,6 +6,38 @@
 .tag-server hgroup { background-color: #292C37; }
 .tag-other hgroup { background-color: #F5851C; }
 
+
+header {
+
+    h2 {
+        margin-bottom: 8px;
+
+        a {
+            color: #222 !important;   
+        }
+    }
+
+    p {
+        color: darken(#DEDACD, 10);
+        font-style: italic;
+        margin-top: 0;
+        text-shadow: 1px 1px white;
+        text-align: center;
+    }
+}
+
+
+hgroup h2 a {
+    text-decoration: none !important;
+}
+
+hgroup {
+    margin: 8px 0 10px 0;
+    h1 {
+        font-size: 200%;
+    }
+}
+
 .hgroup-page {
     background-color: steelBlue;
 }
@@ -27,10 +59,31 @@
     border: 2px solid #CCC;
 }
 
+.article.content {
+
+    p {
+        color: #888;
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    strong, b {
+        color: #666;
+    }
+}
+
 
 .profile {
     .clearfix;
-    margin-bottom: 40px;
+    border: 2px dotted #CCC;
+    padding: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+    .top-right {
+        margin: 16px;
+    }
 
     .profile-img {
         float: left;
@@ -38,8 +91,16 @@
     }
 
     .profile-text {
+        float: left;
+        width: 600px;
+        
+        h2 {
+            margin: 0;
+            font-size: 200%;
+        }
         p {
-            margin: 5px 0;
+            margin: 8px 0;
+            font-size: 120%;
         }
     }
 }
