@@ -62,6 +62,21 @@
 
             {% include footer.html %}
         </div>
+
+        <script>
+            var readyStateCheckInterval = setInterval(function() {
+                if (document.readyState === 'complete') {
+                    clearInterval(readyStateCheckInterval)
+
+                    var links = document.querySelectorAll('.article a')
+
+                    for (var i = 0; i < links.length; i++) {
+                        console.log(links[i])
+                        links[i].target = '_blank'
+                    }
+                }
+            }, 10)
+        </script>
     </body>
 </html>
 
