@@ -67,7 +67,7 @@ Don't forget to add the new extension to php.ini and then restart your server in
 
 ###Let the user pick it
 
-With the above function you have all timezones listed by continents. You can then create a drop down menu for continents and option for each country. [See an example here](/examples/timezone/timezone_options.php).
+With the above function you have all timezones listed by continents. You can then create a drop down menu for continents and option for each country.
 
 {% highlight php %}
 <?php
@@ -96,7 +96,7 @@ function timezone_options()
 
 > Time zone are written as offset from UTC in the format ±[hh]:[mm], ±[hh][mm], or ±[hh]. So if the time being described is one hour ahead of UTC (such as the time in Berlin during the winter), the zone designator would be "+01:00", "+0100", or simply "+01".
 
-You can't directly access to the user timezone via Php. To get the user timezone you have to get his offset and to know if saving daylight is observed. You can use JavaScript to obtain this information. [See an example here](/examples/timezone/timezone_javascript.php):
+You can't directly access to the user timezone via Php. To get the user timezone you have to get his offset and to know if saving daylight is observed. You can use JavaScript to obtain this information:
 
 {% highlight javascript %}
 function get_timezone_infos() {
