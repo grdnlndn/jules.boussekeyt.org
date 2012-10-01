@@ -23,7 +23,7 @@ __innovative projects__, writing __clean/simple code__ and __test driven develop
 ## Previously
 
 I've been a programmer for 5 years, getting my start in a e-commerce. Recently I've work in both big 
-companies (SensioLabs) and the smallest of startups (Twitspark, Balloon). I've also done some 
+companies ([SensioLabs](http://sensiolabs.com)) and the smallest of startups ([Twitspark](http://www.twitspark.com), [Wisembly](http://votrequestion.com)). I've also done some 
 side projects. I now working mainly with Javascript using Backbone.js, Require.js, Mocha, Node.js; although 
 I still enjoy doing some PHP occasionally.
 
