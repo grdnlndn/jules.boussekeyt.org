@@ -4,6 +4,9 @@ tags: frontend
 title: Backbone.js tips and tricks
 ---
 
+In my [previous post about underscore.js](/2012/underscorejs.html), I gave a gentle introduction 
+to underscore.js. Now we will see further how Underscore can help you with your application 
+business logic.
 
 ## Call the same method on an array of objects
 
@@ -82,7 +85,7 @@ var viewB = new Backbone.View({ eventlistener: eventListener })
 ## Save expensive calls
 
 For instance, you can use [_.debounce() function](http://underscorejs.org/#debounce), 
-see [my previous post](http://jules.boussekeyt.org/2012/backbonejs-debounce.html) for more details on this. 
+see [my previous post](/2012/backbonejs-debounce.html) for more details on this. 
 
 
 ## Prevent double form submission
