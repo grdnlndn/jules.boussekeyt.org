@@ -5,7 +5,7 @@ title: Backbone.js tips and tricks
 ---
 
 In my [previous post about underscore.js](/2012/underscorejs.html), I gave a gentle introduction 
-to underscore.js. Now we will see further how Underscore can help you with your application 
+to underscore.js. Now we will see further how Underscore can help you with your application's 
 business logic.
 
 ## Call the same method on an array of objects
