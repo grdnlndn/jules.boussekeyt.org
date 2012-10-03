@@ -62,7 +62,7 @@ var db = {
 }
 {% endhighlight %}
 
-## Create a global event listener
+## Create a global event listener with Backbone.Events
 
 In BackboneJS, each `Backbone.View`, `Backbone.Model`, `Backbone.Collection`, 
 `Backbone.Router`n `Backbone.History` prototypes inherits from `Backbone.Events`, 
@@ -107,26 +107,7 @@ $('button.my-button').on('click', _.debounce(function() {
 {% endhighlight %}
 
 
-## Don't mess with view.$el
-
-
-Inside a Backbone view, the main dom element of the view is cached, so always use 
-the `el` or `$el` property:
-
-{% highlight javascript %}
-var view = new Backbone.View()
-
-// - get the jquery element of the view
-view.$el // good
-$(view.el) // wrong (bad performance)
-
-// - get the dom element of the view
-view.el // good
-$(view.el)[0] // wrong (bad performance)
-{% endhighlight %}
-
-
-## Change the hash wby calling the router
+## Change the hash without calling actions inside Backbone.Router
 
 Backbone.js applications state is managed by hashes (eg: #resource or #foo). Everytime the hash 
 changes an action is called inside the `Backbone.Router`. This is usefull but in some case you may 
@@ -156,6 +137,57 @@ router.navigate('foo', true)
 // => 
 
 {% endhighlight %}
+
+
+## Optimize Backbone.View rendering
+
+
+A very common pattern with Javascript applications is the use of events to update the DOM
+when a model has been updated.
+
+{% highlight javascript %}
+var View = Backbone.View({
+
+    initialize: function() {
+        // when model is updated update the DOM
+        this.model.on('change', this.render.bind(this))
+    },
+
+    render: function() {
+        // do rendering
+    }
+})
+{% endhighlight %}
+
+The main drawback with this approach is whenever your model is updated the DOM is also updated, 
+unfortunately you can update your model and not wanting to update the DOM (example: If the property 
+"updatedDate" is changed, maybe you don't need to render again).
+
+The best way i've found to optimize rendering is to create a blacklist, see code below:
+
+
+{% highlight javascript %}
+var View = Backbone.View({
+
+    initialize: function() {
+        // when model is updated update the DOM
+        this.model.on('change', function(model, params) {
+            var blacklist = ['createdDate', 'id', 'updatedDate']
+            var changes = _.difference(_.keys(params.changes), blacklist)
+
+            // if there's some changes (other than "createdDate", "id" and "updatedDate")
+            if (changes.length) {
+                this.render()
+            }
+        }.bind(this))
+    },
+
+    render: function() {
+        // do rendering
+    }
+})
+{% endhighlight %}
+
 
 
 <div class="alert warning">
