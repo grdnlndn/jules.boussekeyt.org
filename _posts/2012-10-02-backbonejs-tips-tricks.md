@@ -191,5 +191,5 @@ var View = Backbone.View({
 
 
 <div class="alert warning">
-    Hey, I'm a <a href="/hire.html">Backbone.js freelance</a>, I'm specialized in Javascript applications, hire me!
+    Hey, I'm a <a href="/hire.html">Backbone.js freelancer</a>, hire me!
 </div>

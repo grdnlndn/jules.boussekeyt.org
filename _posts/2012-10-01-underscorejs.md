@@ -128,7 +128,6 @@ So stay tuned.
 
 
 <div class="alert warning">
-    Hey, I'm a <a href="/hire.html">Backbone.js freelance</a>, I'm specialized in Javascript applications, you can learn more about 
-    my previous work on my <a href="http://www.linkedin.com/in/julesboussekeyt">Linkedin profile</a>, hire me!
+    Hey, I'm a <a href="/hire.html">Backbone.js freelancer</a>, hire me!
 </div>
 
