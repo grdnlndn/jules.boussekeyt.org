@@ -128,7 +128,7 @@ var router = new Router()
 
 Backbone.history.start()
 
-dd// here the foo() action is called
+// here the foo() action is called
 window.location.hash = '#foo'
 // => "foo() called"
 
