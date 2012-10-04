@@ -21,8 +21,8 @@ _Frameworks do all the work for authentication mechanisms, but if one day you wo
 I've created a project called `SimpleFramework`, it's a framework, nothing more. `SimpleFramework` wants to be as small as possible with minimal features: templating, routing, controller, .. SimpleFramework doesn't want to do all the work for you, you are the real conductor of your project!
 
 __I will be very happy to hear your feedback or bugs you may encounter__
-_You can contact me [here](/about) and post issues [here](https://github.com/gordonslondon/SimpleFramework/issues/new)_
+_You can contact me [here](/hire.html) and post issues [here](https://github.com/gordonslondon/SimpleFramework/issues/new)_
 
 <div style="text-align:center">
-<h3><a target="_blank" href="http://simple-php-framework.org/">Visit SimpleFramework website ?</a></h3>
+<h3><a target="_blank" href="https://github.com/gordonslondon/SimpleFramework">Visit SimpleFramework on Github</a></h3>
 </div>
