@@ -146,7 +146,7 @@ A very common pattern with Javascript applications is the use of events to updat
 when a model has been updated.
 
 {% highlight javascript %}
-var View = Backbone.View({
+var View = Backbone.View.extend({
 
     initialize: function() {
         // when model is updated update the DOM
@@ -163,20 +163,28 @@ The main drawback with this approach is whenever your model is updated the DOM i
 unfortunately you can update your model and not wanting to update the DOM (example: If the property 
 "updatedDate" is changed, maybe you don't need to render again).
 
-The best way i've found to optimize rendering is to create a blacklist, see code below:
+The best way i've found to optimize rendering is to create a blacklist, let say:
+
+- If `createdDate`, `id`, `updatedDate` columns are changed, do nothing
+- If `status` is updated, then call `updateStatus()`
+- If any other property is changed, then call `render()`
 
 
 {% highlight javascript %}
-var View = Backbone.View({
+var View = Backbone.View.extend({
 
     initialize: function() {
         // when model is updated update the DOM
         this.model.on('change', function(model, params) {
-            var blacklist = ['createdDate', 'id', 'updatedDate']
-            var changes = _.difference(_.keys(params.changes), blacklist)
+            // remove 'createdDate', 'id', 'updatedDate' columns from changeset
+            var changeset = _.omit(params.changes, ['createdDate', 'id', 'updatedDate'])
 
-            // if there's some changes (other than "createdDate", "id" and "updatedDate")
-            if (changes.length) {
+            if (changeset.status) {
+                this.updateStatus()
+                delete changeset.status
+            }
+
+            if (_.size(changeset) > 0) {
                 this.render()
             }
         }.bind(this))
