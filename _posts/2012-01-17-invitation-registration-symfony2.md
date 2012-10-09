@@ -2,6 +2,7 @@
 layout: post
 tags: backend
 title: Invitation in user registration with symfony2
+visible: false
 ---
 
 This is required when a user needs to be invited for the sake of creating a new account/user.
