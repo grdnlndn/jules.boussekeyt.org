@@ -25,7 +25,7 @@ my_github: https://github.com/gordonslondon
         <article class="article">
             <hgroup>
                 <h2><a href=".{{ post.url }}" rel="bookmark" title="{{ post.title }}">{{ post.title }}</a></h2>
-                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date_to_string }}</time>
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</time>
             </hgroup>
             <p class="content">{{ post.content | strip_html | truncate: 200 }}</p>
         </article>
