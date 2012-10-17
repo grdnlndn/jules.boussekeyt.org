@@ -126,18 +126,19 @@ All that we have to do now is call the `remove()` method on the preview view:
             index: Number(index),
             name: 'view' + index
         })
-        var view = new View({
-            model: model
-        })
 
         // unbind all events of the previous view to avoid "ghost views"
         if (this.previousView) this.previousView.remove()
 
-        // save reference of the view
-        this.previousView = view
+        var view = new View({
+            model: model
+        })
 
         // render the view
         $('#app').html(view.render().$el)
+
+        // save reference of the view
+        this.previousView = view
     }
 {% endhighlight javascript %}
 
