@@ -148,7 +148,7 @@ All that we have to do now is call the `remove()` method on the preview view:
 {% endhighlight javascript %}
 
 
-Calling `remove()` on a Backbone model does several things:
+Calling `remove()` on a Backbone.View does several things:
 
 - Remove Javascript events (click, keypress, blur, ...)
 - Unbind all events of the model (change, sync, remove)
