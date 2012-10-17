@@ -109,9 +109,6 @@ So know, how can we fix it? It's pretty straight forward. Our previous router co
             model: model
         })
 
-        // register the view to manipulate it after
-        Views.push(view)
-
         // render the view
         $('#app').html(view.render().$el)
     }
@@ -129,26 +126,24 @@ All that we have to do now is call the `remove()` method on the preview view:
             index: Number(index),
             name: 'view' + index
         })
-        var view = new View({
-            model: model
-        })
-
-        // register the view to manipulate it afterwards
-        Views.push(view)
 
         // unbind all events of the previous view to avoid "ghost views"
         if (this.previousView) this.previousView.remove()
 
-        // save reference of the view
-        this.previousView = view
+        var view = new View({
+            model: model
+        })
 
         // render the view
         $('#app').html(view.render().$el)
+
+        // save reference of the view
+        this.previousView = view
     }
 {% endhighlight javascript %}
 
 
-Calling `remove()` on a Backbone model does several things:
+Calling `remove()` on a Backbone.View does several things:
 
 - Remove Javascript events (click, keypress, blur, ...)
 - Unbind all events of the model (change, sync, remove)
