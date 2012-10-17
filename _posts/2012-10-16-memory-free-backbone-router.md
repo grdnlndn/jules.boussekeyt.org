@@ -109,9 +109,6 @@ So know, how can we fix it? It's pretty straight forward. Our previous router co
             model: model
         })
 
-        // register the view to manipulate it after
-        Views.push(view)
-
         // render the view
         $('#app').html(view.render().$el)
     }
@@ -132,9 +129,6 @@ All that we have to do now is call the `remove()` method on the preview view:
         var view = new View({
             model: model
         })
-
-        // register the view to manipulate it afterwards
-        Views.push(view)
 
         // unbind all events of the previous view to avoid "ghost views"
         if (this.previousView) this.previousView.remove()
