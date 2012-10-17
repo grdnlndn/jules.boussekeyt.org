@@ -6,6 +6,9 @@
 .tag-server hgroup { background-color: #292C37; }
 .tag-other hgroup { background-color: #F5851C; }
 
+.border {
+    border: 2px dotted #CCC;
+}
 
 header {
 
@@ -43,17 +46,26 @@ hgroup {
     background-color: steelBlue;
 }
 
-.github-edit {
-    float: left;
-    margin-top: 10px;
-}
+.post-bottom {
+    background-color: #DDD;
+    padding-top: 8px;
+    .border;
 
-.share-box {
-    float: right;
+    
+    .meta-box {
+        float: left;
+        margin-top: 10px;
+        iframe { vertical-align: bottom; }
+    }   
 
-    ul {
-        list-style-type: none;
-        li { display: inline-block; }
+    .share-box {
+        margin-top: 15px;
+        float: right;
+
+        ul {
+            list-style-type: none;
+            li { display: inline-block; }
+        }
     }
 }
 
@@ -81,7 +93,7 @@ hgroup {
 
 .profile {
     .clearfix;
-    border: 2px dotted #CCC;
+    .border;
     padding: 18px;
     margin-top: 20px;
     margin-bottom: 20px;

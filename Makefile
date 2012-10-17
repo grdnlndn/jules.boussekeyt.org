@@ -1,8 +1,16 @@
 all:
 	jekyll
+	make css
+
+css:
 	recess --compress assets/css/style.less > assets/css/style.css
+
+dev:
+	jekyll --auto &
+	make css &
+	watchr -e "watch('assets/css/.*\.less') { system 'make' }"
 
 deploy:
 	ssh root@jules.boussekeyt.org "cd /home/grdn.io && git pull origin master && git submodule update --init && make"
 
-.PHONY: deploy
+.PHONY: deploy watch
