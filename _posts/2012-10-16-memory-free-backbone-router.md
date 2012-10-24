@@ -4,6 +4,7 @@ tags: frontend
 title: Memory free Backbone Router
 ---
 
+
 Backbone.js lets you build your javascript application the way you want, 
 but as many have noticed there's often __some weird problems when developping Backbone.js
 applications__. Sometimes it's a click event that is triggered mutliple
