@@ -1,14 +1,14 @@
 ---
 layout: page
 title: Hire me
-my_github: https://github.com/gordonslondon
+my_github: https://github.com/grdnlndn
 socials:
   - type: twitter
-    username: gordonslondon
-    url: "http://twitter.com/gordonslondon"
+    username: grdnlndn
+    url: "http://twitter.com/grdnlndn"
   - type: github
-    username: gordonslondon
-    url: "http://github.com/gordonslondon"
+    username: grdnlndn
+    url: "http://github.com/grdnlndn"
   - type: linkedin
     username: julesboussekeyt
     url: "http://www.linkedin.com/in/julesboussekeyt"
