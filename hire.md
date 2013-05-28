@@ -12,6 +12,9 @@ socials:
   - type: linkedin
     username: julesboussekeyt
     url: "http://www.linkedin.com/in/julesboussekeyt"
+  - type: skype
+    username: grdnlndn
+    url: "http://skype.com"
 ---
 
 ## Hello
