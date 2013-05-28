@@ -26,7 +26,7 @@ __innovative projects__, writing __clean/simple code__ and __test driven develop
 ## Previously
 
 I've been a programmer for 5 years, getting my start in a e-commerce. Recently I've work in both big 
-companies ([SensioLabs](http://sensiolabs.com)) and the smallest of startups ([Twitspark](http://www.twitspark.com), [Wisembly](http://votrequestion.com)). I've also done some 
+companies ([SensioLabs](http://sensiolabs.com)) and the smallest of startups ([Twitspark](http://www.twitspark.com), [Everlution](http://everlution.com), [Wisembly](http://votrequestion.com)). I've also done some 
 side projects. I now working mainly with Javascript using Backbone.js, Require.js, Mocha, Node.js; although 
 I still enjoy doing some PHP occasionally.
 
@@ -36,6 +36,11 @@ I still enjoy doing some PHP occasionally.
 I'm available for web development consulting and freelance. I'm confortable working in teams or alone,
 on new or existing projects. I can help you with the early stage of your project like designing the UI, 
 improve your existing software, or help you with difficult tasks.
+
+
+## Personal projects
+
+I've created a canvas game, [moto-game.org](http://moto-game.org).
 
 
 ## Find me on the web
