@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS3 Iphone Application</title>
+        <style>
+            body {
+                text-align: center;
+            }
+
+            .wrapper {
+                margin: 20px auto;
+                max-width: 480px;
+                position: relative;
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                margin-top: 20px;
+                text-align: left;
+            }
+
+            li {
+                max-width: 100%;
+                margin: 0;
+                padding: 8px;
+                border: 1px solid #AAA;
+                background-color: #EFEFEF;
+                position: relative;
+
+                top: 200px;
+                opacity: 0;
+                margin-bottom: 80px;
+                transition: top .8s ease .4s, opacity 1.8s ease .4s, margin .8s ease .4s;
+            }
+
+            section {
+                width: 100%;
+                position: absolute;
+
+                opacity: 0;
+                transition: opacity .4s ease-out, -webkit-transform 1s ease;
+            }
+
+            section.current {
+                opacity: 100;
+            }
+
+            section.current li {
+                top: 0;
+                opacity: 100;
+                margin-bottom: 20px;
+            }
+
+            body[data-level="0"] [data-level="0"] {
+                -webkit-transform: translateX(0%);
+            }
+
+            body[data-level="0"] [data-level="1"] {
+                -webkit-transform: translateX(100%);
+            }
+
+            body[data-level="0"] [data-level="2"] {
+                -webkit-transform: translateX(100%);
+            }
+
+            body[data-level="1"] [data-level="0"] {
+                -webkit-transform: translateX(-100%);
+            }
+
+            body[data-level="1"] [data-level="1"] {
+                -webkit-transform: translateX(0%);
+            }
+
+            body[data-level="1"] [data-level="2"] {
+                -webkit-transform: translateX(100%);
+            }
+
+            body[data-level="2"] [data-level="0"] {
+                -webkit-transform: translateX(-100%);
+            }
+
+            body[data-level="2"] [data-level="1"] {
+                -webkit-transform: translateX(-100%);
+            }
+
+            body[data-level="2"] [data-level="2"] {
+                -webkit-transform: translateX(0%);
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <h1>CSS3 Iphone Application</h1>
+        <div class="wrapper">
+
+            <section id="section-01" data-level="0">
+                <h4>Welcome (level 0)</h4>
+                <ul class="items">
+                    <li><a href="#section-11">Go to level 1</a></li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                </ul>
+            </section>
+
+            <section id="section-11" data-level="1">
+                <h4><a href="#section-01">&larr; back</a> - Welcome (level 1)</h4>
+                <ul class="items">
+                    <li><a href="#section-21">Go to level 2</a></li>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                </ul>
+            </section>
+
+            <section id="section-21" data-level="2">
+                <h4><a href="#section-11">&larr; back</a> - Welcome (level 2)</h4> 
+                <ul class="items">
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                </ul>
+            </section>
+
+        </div>
+        <script>
+
+            // get DOM element data attributes
+            function dom_data(el) {
+                var data = {};
+                [].forEach.call(el.attributes, function(attr) {
+                    if (/^data-/.test(attr.name)) {
+                        var camelCaseName = attr.name.substr(5).replace(/-(.)/g, function ($0, $1) {
+                            return $1.toUpperCase()
+                        })
+                        data[camelCaseName] = attr.value
+                    }
+                })
+                return data
+            }
+
+            // bind an event on multiple selectors
+            function bind_event(els, type, fn) {
+                return Array.prototype.forEach.call(els, function(el) {
+                    el.addEventListener(type, fn)
+                })
+            }
+
+
+            // go to clicked section
+            bind_event(document.querySelectorAll('section a[href]'), 'click', function(event) {
+                event.preventDefault()
+
+                load_panel(
+                    document.querySelector('section.current'),
+                    document.getElementById(event.target.href.split('#')[1])
+                )
+            })
+
+            // toggle "current" class and manage data-level attrivbute
+            function load_panel(previous, current) {
+                previous && previous.classList.remove('current')
+                current.classList.add('current')
+                document.body.dataset.level = dom_data(current).level
+            }
+
+            // initialize with first section
+            load_panel(null, document.getElementById('section-01'))
+
+        </script>
+    </body>
+</html>
