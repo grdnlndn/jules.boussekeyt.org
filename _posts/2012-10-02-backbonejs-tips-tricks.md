@@ -129,11 +129,11 @@ var router = new Router()
 Backbone.history.start()
 
 // here the foo() action is called
-window.location.hash = '#foo'
+router.navigate('foo', { trigger: true })
 // => "foo() called"
 
 // here the foo() action is not called
-router.navigate('foo', true)
+router.navigate('foo')
 // => 
 
 ```
