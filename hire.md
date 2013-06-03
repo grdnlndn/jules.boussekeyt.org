@@ -19,16 +19,14 @@ socials:
 
 ## Hello
 
-I specialize in __Symfony2__ and __Backbone.js__. I enjoy __large scale architecture__,
-__innovative projects__, writing __clean/simple code__ and __test driven development__.
-
+I'm a PHP and Javascript developer. I enjoy building web-applications.
 
 ## Previously
 
 I've been a programmer for 5 years, getting my start in a e-commerce. Recently I've work in both big 
 companies ([SensioLabs](http://sensiolabs.com)) and the smallest of startups ([Twitspark](http://www.twitspark.com), [Everlution](http://everlution.com), [Wisembly](http://votrequestion.com)). I've also done some 
 side projects. I now working mainly with Javascript using Backbone.js, Require.js, Mocha, Node.js; although 
-I still enjoy doing some PHP occasionally.
+I still enjoy doing some PHP.
 
 
 ## Freelance
@@ -38,9 +36,20 @@ on new or existing projects. I can help you with the early stage of your project
 improve your existing software, or help you with difficult tasks.
 
 
-## Personal projects
+## Skills
 
-I've created a canvas game, [moto-game.org](http://moto-game.org).
+<ul class="tag-list">
+    <li><a>Symfony2</a></li>
+    <li><a>Doctrine2</a></li>
+    <li><a>Node.js</a></li>
+    <li><a>Mongodb</a></li>
+    <li><a>Backbone.js</a></li>
+    <li><a>jQuery</a></li>
+    <li><a>Socket.io</a></li>
+    <li><a>MacOsx</a></li>
+    <li><a>Git</a></li>
+    <li><a>Vim</a></li>
+</ul>
 
 
 ## Find me on the web
