@@ -11,7 +11,7 @@ socials:
     url: "http://github.com/grdnlndn"
   - type: linkedin
     username: julesboussekeyt
-    url: "http://www.linkedin.com/in/julesboussekeyt"
+    url: "http://www.linkedin.com/profile/view?id=143222797"
   - type: skype
     username: grdnlndn
     url: "http://skype.com"
@@ -50,6 +50,8 @@ improve your existing software, or help you with difficult tasks.
     <li><a>Git</a></li>
     <li><a>Vim</a></li>
     <li><a>Debian</a></li>
+    <li><a>CSS3</a></li>
+    <li><a>HTML5</a></li>
 </ul>
 
 
