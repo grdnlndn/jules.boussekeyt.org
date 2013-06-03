@@ -5,7 +5,7 @@ all:
 css:
 	lessc assets/css/style.less > assets/css/style.css
 
-dev:
+watch:
 	jekyll build --watch &
 	make css &
 	watchr -e "watch('assets/css/.*\.less') { system 'make' }"

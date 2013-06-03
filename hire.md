@@ -49,6 +49,7 @@ improve your existing software, or help you with difficult tasks.
     <li><a>MacOsx</a></li>
     <li><a>Git</a></li>
     <li><a>Vim</a></li>
+    <li><a>Debian</a></li>
 </ul>
 
 
