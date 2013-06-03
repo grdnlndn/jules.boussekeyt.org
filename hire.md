@@ -41,18 +41,18 @@ improve your existing software, or help you with difficult tasks.
 <ul class="tag-list">
     <li><a>Symfony2</a></li>
     <li><a>Doctrine2</a></li>
-    <li><a>Node.js</a></li>
-    <li><a>Mongodb</a></li>
+    <li><a>REST Api</a></li>
     <li><a>Backbone.js</a></li>
     <li><a>jQuery</a></li>
     <li><a>Socket.io</a></li>
-    <li><a>MacOsx</a></li>
     <li><a>Git</a></li>
     <li><a>Vim</a></li>
     <li><a>Debian</a></li>
+    <li><a>Mongodb</a></li>
+    <li><a>Mysql</a></li>
     <li><a>CSS3</a></li>
     <li><a>HTML5</a></li>
-    <li><a>REST Api</a></li>
+    <li><a>Node.js</a></li>
 </ul>
 
 
