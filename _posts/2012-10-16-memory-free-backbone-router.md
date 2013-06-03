@@ -17,7 +17,7 @@ improve it. Let's start directly with an example: we have a router rendering som
 
 __Question__: There's a problem in the following example; do you see it?
 
-{% highlight javascript %}
+```javascript
 var Views = []
 
 var Router = Backbone.Router.extend({
@@ -59,7 +59,7 @@ var View = Backbone.View.extend({
         return this
     }
 })    
-{% endhighlight %}
+```
 
 <hr/>
     
@@ -67,7 +67,7 @@ __Problem__: We've create a "ghost view"; `loadView()` instanciates a new view b
 
 With further illustration of the previous code, the following example illustrates the __"ghost view"__ effect:
 
-{% highlight javascript %}
+```javascript
 var router = new Router()
 Backbone.history.start()
 
@@ -87,7 +87,7 @@ setTimeout(function() {
     Views[0].model.set('name', 'Balthazar')
     // => name is now: Balthazar
 }, 2000)
-{% endhighlight %}
+```
 
 You can see it happen in [this jsfiddle](http://jsfiddle.net/NprJr/) (keep your console open)
 
@@ -97,7 +97,7 @@ __Solution__: Call "remove()" on previous view
 
 So know, how can we fix it? It's pretty straight forward. Our previous router code was something like:
 
-{% highlight javascript %}
+```javascript
 
     // ...
 
@@ -113,12 +113,12 @@ So know, how can we fix it? It's pretty straight forward. Our previous router co
         // render the view
         $('#app').html(view.render().$el)
     }
-{% endhighlight javascript %}
+```
 
 
 All that we have to do now is call the `remove()` method on the preview view:
 
-{% highlight javascript %}
+```javascript
 
     // ...
 
@@ -141,7 +141,7 @@ All that we have to do now is call the `remove()` method on the preview view:
         // save reference of the view
         this.previousView = view
     }
-{% endhighlight javascript %}
+```
 
 
 Calling `remove()` on a Backbone.View does several things:

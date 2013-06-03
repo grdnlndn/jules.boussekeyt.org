@@ -13,7 +13,7 @@ when the user click on a button, or send some ajax calls, or doing computational
 Let's take for example Gmail, there's a list of emails. When user clicks one of those,
 it loads the email in the window. This action can be represented by this method:
 
-{% highlight javascript %}
+```javascript
 /**
  * Load according conversation in the window
  */
@@ -23,7 +23,7 @@ var loadConversation = function(conversationId) {
     // - render a templates with email's informations
     // - etc ..
 }
-{% endhighlight %}
+```
 
 The loadConversation method is the one we want to profile. Let us profile it the best way possible!
 
@@ -41,7 +41,7 @@ To profile only the `loadConversation()` method we're going to wrap this method 
 at the beggining and stop it when the method call finishes. We can now create an underscore.js 
 mixin:
 
-{% highlight javascript %}
+```javascript
 _.mixin({
     profile: function(fn) {
         return function(profileId) {
@@ -57,24 +57,24 @@ _.mixin({
     }
 })
 
-{% endhighlight %}
+```
 
 _([some other underscore mixins](https://github.com/documentcloud/underscore/wiki/Mixin-Catalog))_.
 
 We can now use it like this:
 
-{% highlight javascript %}
+```javascript
 var loadConversation = _.profile(function(conversationId) {
     // the code profiled
 })
-{% endhighlight %}
+```
 
 
 ## Example
 
 If we execute following code:
 
-{% highlight javascript %}
+```javascript
 var expensiveFn = _.profile(function(profileId) {
     var i = 0
 
@@ -93,7 +93,7 @@ var expensiveFn = _.profile(function(profileId) {
 
 expensiveFn('123')
 
-{% endhighlight %}
+```
 
 Now we click on the __123__ profile on the right sidebar, we now see the following graphic:
 

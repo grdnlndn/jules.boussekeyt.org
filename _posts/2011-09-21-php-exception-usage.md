@@ -16,7 +16,7 @@ _An error occurred during the code execution._
 
 A usual case scenario is when there's a mistake during a database connection; we throw a runtime exception because the failure only occurs when we run the code :
 
-{% highlight php %}
+```php
 <?php
 
 try {
@@ -24,7 +24,7 @@ try {
 } catch (RuntimeException $e) {
     echo 'Error during connection : ' . $e->getMessage();
 }
-{% endhighlight %}
+```
 
 ## LogicException
 
@@ -32,7 +32,7 @@ _Your code is trying to do something illogical._
 
 You have a LogicException when there's a logic-related error in your code. For exemple we can't accelerate a car if the engine is not started :
 
-{% highlight php %}
+```php
 <?php
 
 class Car
@@ -59,7 +59,7 @@ class Car
         $this->speed++;
     }
 }
-{% endhighlight %}
+```
 
 ## OutOfBoundsException
 
@@ -67,7 +67,7 @@ _The key you're looking for is invalid._
 
 An OutOfBoundsException occurs when a key is invalid. Let's say we have a container to store objects:
 
-{% highlight php %}
+```php
 <?php
 
 class Container
@@ -88,7 +88,7 @@ class Container
         return $this->bag[$key];
     }
 }
-{% endhighlight %}
+```
 
 ## InvalidArgumentException
 
@@ -96,7 +96,7 @@ _The argument you have provided is invalid._
 
 Let's say we have a bank account, in PHP we can't check if an argument is an integer, so we have to do some validation :
 
-{% highlight php %}
+```php
 <?php
 
 class BankAccount
@@ -117,17 +117,17 @@ class BankAccount
         $this->balance += $number;
     }
 }
-{% endhighlight %}
+```
 
 Now, we can provide an integer only to the <code>credit</code> method :
 
-{% highlight php %}
+```php
 <?php
 
 $ba = new BankAccount();
 $ba->credit(200);
 $ba->credit('invalid value'); // throws InvalidArgumentException
-{% endhighlight %}
+```
 
 ## ErrorException
 
@@ -135,7 +135,7 @@ _There was an error._
 
 This exception can be used to register an error handler that converts errors to exceptions :
 
-{% highlight php %}
+```php
 <?php
 
 function exception_error_handler($errno, $errstr, $errfile, $errline ) {
@@ -144,7 +144,7 @@ function exception_error_handler($errno, $errstr, $errfile, $errline ) {
 
 // register the error handler
 set_error_handler(exception_error_handler);
-{% endhighlight %}
+```
 
 ## BadMethodCallException
 
@@ -152,7 +152,7 @@ _The method you're trying to call is invalid._
 
 In Doctrine there is a repository to fetch objects from your database. You can call methods like `findOneBySlug('php-exceptions')`. Doctrine makes a good usage of this method in the `EntityRepository` :
 
-{% highlight php %}
+```php
 <?php
 
 class EntityRepository
@@ -174,7 +174,7 @@ class EntityRepository
 
     /* ... */
 }
-{% endhighlight %}
+```
 
 <hr/>
 

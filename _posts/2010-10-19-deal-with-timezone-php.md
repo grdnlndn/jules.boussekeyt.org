@@ -34,9 +34,9 @@ You can set your default timezone in two ways: let us assume "Europe/Paris" is t
 - Open your php.ini file in your favourite text editor and change the following line: `date.timezone = Europe/Paris`. You may have to restart your server in order to make this effective.
 - In case you don't want to meddle with your ini file you can simply set the default time zone using the following PHP function: 
 
-{% highlight php %}
+```php
 <?php date_default_timezone_set('Europe/Paris') ?>
-{% endhighlight %}
+```
 
 [List of PHP supported Timezones](http://www.php.net/manual/en/timezones.php)
 
@@ -47,17 +47,17 @@ Your php installation uses the timezonedb package available on PECL.
 You can check the current version of your timezonedb with:
 
 
-{% highlight php %}
+```php
 <?php echo timezone_version_get() ?>
-{% endhighlight %}
+```
 
 You will see a number like this 2012.9 wich correspond to a date. Sometime timezones are updated, if 
 the package is older than one year, i suggest you update your timezonedb. You can install/update your 
 timezonedb version by executing the following command on the terminal:
 
-{% highlight bash %}
+```bash
 $ sudo pecl install timezonedb
-{% endhighlight %}
+```
 
 Don't forget to add the new extension to php.ini and then restart your server in order to make this effective.
 
@@ -69,7 +69,7 @@ Don't forget to add the new extension to php.ini and then restart your server in
 
 With the above function you have all timezones listed by continents. You can then create a drop down menu for continents and option for each country.
 
-{% highlight php %}
+```php
 <?php
 
 function timezone_options()
@@ -90,7 +90,7 @@ function timezone_options()
 
     return $locations;
 }
-{% endhighlight %}
+```
 
 ###Get it via Javascript and PHP
 
@@ -98,7 +98,7 @@ function timezone_options()
 
 You can't directly access to the user timezone via Php. To get the user timezone you have to get his offset and to know if saving daylight is observed. You can use JavaScript to obtain this information:
 
-{% highlight javascript %}
+```javascript
 function get_timezone_infos() {
     var now = new Date();
     var jan1 = new Date(now.getFullYear(), 0, 1, 0, 0, 0, 0);
@@ -113,7 +113,7 @@ function get_timezone_infos() {
 
     return { offset: offset, dst: dst };
 }
-{% endhighlight %}
+```
 
 ##Database Storage
 
@@ -126,7 +126,7 @@ You must store the DateTime in UTC timezone for all columns of DateTime type.
 
 Set the DateTime timezone to UTC before storing it in the database:
 
-{% highlight php %}
+```php
 <?php
 
 function toDatabase($dateTime)
@@ -134,18 +134,19 @@ function toDatabase($dateTime)
     $dateTime->setTimezone(new DateTimeZone('GMT'));
     return $dateTime;
 }
-{% endhighlight %}
+```
+
 
 When retrieving the DateTime from the database set it to the original timezone:
 
-{% highlight php %}
+```php
 <?php
 
 // set the timezone of the current user before calling the function
 date_default_timezone_set('Europe/Paris');
-{% endhighlight %}
+```
 
-{% highlight php %}
+```php
 <?php
 
 function toUser($dateTime)
@@ -153,5 +154,5 @@ function toUser($dateTime)
     $dateTime->setTimezone(new DateTimeZone(date_default_timezone_get()));
     return $dateTime;
 }
-{% endhighlight %}
+```
 

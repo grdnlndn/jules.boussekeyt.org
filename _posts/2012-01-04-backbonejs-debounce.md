@@ -10,7 +10,7 @@ I've been trying to __delay an expensive search triggered by a `keyup` event__ w
 
 I have a BackboneJS View, where each key-press triggers the `fetchApi` method:
 
-{% highlight javascript %}
+```javascript
 window.MyView = Backbone.View.extend({
     // ...
     events: {
@@ -22,7 +22,7 @@ window.MyView = Backbone.View.extend({
     }
    // ...
 });
-{% endhighlight %}
+```
 
 Unfortunately each time a key is pressed a call to the API is made. A better solution would be to wait till the user has finished typing.
 
@@ -31,7 +31,7 @@ Unfortunately each time a key is pressed a call to the API is made. A better sol
 With the `debounce` method in [underscore.js](http://documentcloud.github.com/underscore/#debounce)  it's pretty easy to delay the `fetchApi` method, like this:
 
 
-{% highlight javascript %}
+```javascript
 window.MyView = Backbone.View.extend({
     // ...
     events: {
@@ -43,7 +43,7 @@ window.MyView = Backbone.View.extend({
     }, 800)
    // ...
 });
-{% endhighlight %}
+```
 
 You're done!
 

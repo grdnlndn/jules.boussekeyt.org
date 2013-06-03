@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: frontend
-title: CSS3 Mobile Application Layout using Less godness
+title: CSS3 Mobile Application Layout using Less
 ---
 
 

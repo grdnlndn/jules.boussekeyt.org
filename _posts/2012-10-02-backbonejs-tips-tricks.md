@@ -14,7 +14,7 @@ When you deal with BackboneJS you often have a view containing multiple
 subviews, sometimes you want to call a method on each subview. let us check 
 it out with [_.invoke() function](http://underscorejs.org/#invoke):
 
-{% highlight javascript %}
+```javascript
 
 var view = {
 
@@ -28,7 +28,7 @@ var view = {
 
    // ... 
 }
-{% endhighlight %}
+```
 
 
 ## Call a method only once (lazy connection)
@@ -38,7 +38,7 @@ If you have a database class, you need to establish the connection only
 once. Moreover, you want to do it only if you need it (lazy-loading). 
 Let's see how this works with [_.once() function](http://underscorejs.org/#once):
 
-{% highlight javascript %}
+```javascript
 var db = {
 
     // will be called only once
@@ -60,7 +60,7 @@ var db = {
         // find all
     }
 }
-{% endhighlight %}
+```
 
 ## Create a global event listener with Backbone.Events
 
@@ -74,12 +74,12 @@ instanciate a `viewA` and another `viewB`, they do not have the same instance of
 
 The workaround is to create a global event listener and inject it in each view:
 
-{% highlight javascript %}
+```javascript
 var eventListener = _.extend({}, Backbone.Events)
 
 var viewA = new Backbone.View({ eventlistener: eventListener })
 var viewB = new Backbone.View({ eventlistener: eventListener })
-{% endhighlight %}
+```
 
 
 ## Save expensive calls
@@ -96,7 +96,7 @@ of the `debounce()` method to true. This way, the function is triggered when you
 button but it won't be triggered again in case the submit button is clicked the second time in quick 
 succession (double submission).
 
-{% highlight javascript %}
+```javascript
 // prevent double click
 $('button.my-button').on('click', _.debounce(function() {
     console.log('clicked')
@@ -104,7 +104,7 @@ $('button.my-button').on('click', _.debounce(function() {
     // code to handle form submition
 
 }, 500, true)
-{% endhighlight %}
+```
 
 
 ## Change the hash without calling actions inside Backbone.Router
@@ -114,7 +114,7 @@ changes an action is called inside the `Backbone.Router`. This is usefull but in
 need to change the hash by calling the router. You can achieve it by passing true to `navigate()` 
 method:
 
-{% highlight javascript %}
+```javascript
 var Router = Backbone.Router.extend({
     routes: {
         'foo': 'foo'
@@ -136,7 +136,7 @@ window.location.hash = '#foo'
 router.navigate('foo', true)
 // => 
 
-{% endhighlight %}
+```
 
 
 ## Optimize Backbone.View rendering
@@ -145,7 +145,7 @@ router.navigate('foo', true)
 A very common pattern with Javascript applications is the use of events to update the DOM
 when a model has been updated.
 
-{% highlight javascript %}
+```javascript
 var View = Backbone.View.extend({
 
     initialize: function() {
@@ -157,7 +157,7 @@ var View = Backbone.View.extend({
         // do rendering
     }
 })
-{% endhighlight %}
+```
 
 The main drawback with this approach is whenever your model is updated the DOM is also updated, 
 unfortunately you can update your model and not wanting to update the DOM (example: If the property 
@@ -170,7 +170,7 @@ The best way i've found to optimize rendering is to create a blacklist, let say:
 - If any other property is changed, then call `render()`
 
 
-{% highlight javascript %}
+```javascript
 var View = Backbone.View.extend({
 
     initialize: function() {
@@ -194,10 +194,4 @@ var View = Backbone.View.extend({
         // do rendering
     }
 })
-{% endhighlight %}
-
-
-
-<div class="alert warning">
-    Hey, I'm a <a href="/hire.html">Javascript freelancer</a>, hire me!
-</div>
+```
