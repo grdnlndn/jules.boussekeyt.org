@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CSS3 Iphone Application</title>
+        <title>CSS3 Mobile Application Layout</title>
         <style>
             body {
                 text-align: center;
@@ -40,7 +40,10 @@
                 position: absolute;
 
                 opacity: 0;
-                transition: opacity .4s ease-out, -webkit-transform 1s ease;
+                -webkit-transition: opacity .4s ease-out, -webkit-transform 1s ease;
+                -moz-transition: opacity .4s ease-out, -moz-transform 1s ease;
+                -o-transition: opacity .4s ease-out, -o-transform 1s ease;
+                transition: opacity .4s ease-out, transform 1s ease;
             }
 
             section.current {
@@ -53,50 +56,58 @@
                 margin-bottom: 20px;
             }
 
-            body[data-level="0"] [data-level="0"] {
-                -webkit-transform: translateX(0%);
-            }
-
-            body[data-level="0"] [data-level="1"] {
-                -webkit-transform: translateX(100%);
-            }
-
-            body[data-level="0"] [data-level="2"] {
-                -webkit-transform: translateX(100%);
-            }
-
-            body[data-level="1"] [data-level="0"] {
+            .level-0 {
                 -webkit-transform: translateX(-100%);
+                -moz-transform: translateX(-100%);
+                -o-transform: translateX(-100%);
+                transform: translateX(-100%);
             }
-
-            body[data-level="1"] [data-level="1"] {
+            .level-0.current {
                 -webkit-transform: translateX(0%);
+                -moz-transform: translateX(0%);
+                -o-transform: translateX(0%);
+                transform: translateX(0%);
             }
 
-            body[data-level="1"] [data-level="2"] {
+            .level-1 {
+                -webkit-transform: translateX(-100%);
+                -moz-transform: translateX(-100%);
+                -o-transform: translateX(-100%);
+                transform: translateX(-100%);
+            }
+            .current ~ .level-1 {
                 -webkit-transform: translateX(100%);
+                -moz-transform: translateX(100%);
+                -o-transform: translateX(100%);
+                transform: translateX(100%);
             }
-
-            body[data-level="2"] [data-level="0"] {
-                -webkit-transform: translateX(-100%);
-            }
-
-            body[data-level="2"] [data-level="1"] {
-                -webkit-transform: translateX(-100%);
-            }
-
-            body[data-level="2"] [data-level="2"] {
+            .level-1.current {
                 -webkit-transform: translateX(0%);
+                -moz-transform: translateX(0%);
+                -o-transform: translateX(0%);
+                transform: translateX(0%);
             }
 
+            .level-2.current {
+                -webkit-transform: translateX(0%);
+                -moz-transform: translateX(0%);
+                -o-transform: translateX(0%);
+                transform: translateX(0%);
+            }
+            .current ~ .level-2 {
+                -webkit-transform: translateX(100%);
+                -moz-transform: translateX(100%);
+                -o-transform: translateX(100%);
+                transform: translateX(100%);
+            }
 
         </style>
     </head>
     <body>
-        <h1>CSS3 Iphone Application</h1>
+        <h1>CSS3 Mobile Application Layout</h1>
         <div class="wrapper">
 
-            <section id="section-01" data-level="0">
+            <section id="section-01" class="level-0">
                 <h4>Welcome (level 0)</h4>
                 <ul class="items">
                     <li><a href="#section-11">Go to level 1</a></li>
@@ -106,7 +117,7 @@
                 </ul>
             </section>
 
-            <section id="section-11" data-level="1">
+            <section id="section-11" class="level-1">
                 <h4><a href="#section-01">&larr; back</a> - Welcome (level 1)</h4>
                 <ul class="items">
                     <li><a href="#section-21">Go to level 2</a></li>
@@ -117,7 +128,7 @@
                 </ul>
             </section>
 
-            <section id="section-21" data-level="2">
+            <section id="section-21" class="level-2">
                 <h4><a href="#section-11">&larr; back</a> - Welcome (level 2)</h4> 
                 <ul class="items">
                     <li>Item 1</li>
@@ -129,28 +140,12 @@
 
         </div>
         <script>
-
-            // get DOM element data attributes
-            function dom_data(el) {
-                var data = {};
-                [].forEach.call(el.attributes, function(attr) {
-                    if (/^data-/.test(attr.name)) {
-                        var camelCaseName = attr.name.substr(5).replace(/-(.)/g, function ($0, $1) {
-                            return $1.toUpperCase()
-                        })
-                        data[camelCaseName] = attr.value
-                    }
-                })
-                return data
-            }
-
             // bind an event on multiple selectors
             function bind_event(els, type, fn) {
                 return Array.prototype.forEach.call(els, function(el) {
                     el.addEventListener(type, fn)
                 })
             }
-
 
             // go to clicked section
             bind_event(document.querySelectorAll('section a[href]'), 'click', function(event) {
@@ -162,11 +157,10 @@
                 )
             })
 
-            // toggle "current" class and manage data-level attrivbute
+            // toggle "current" class
             function load_panel(previous, current) {
                 previous && previous.classList.remove('current')
                 current.classList.add('current')
-                document.body.dataset.level = dom_data(current).level
             }
 
             // initialize with first section

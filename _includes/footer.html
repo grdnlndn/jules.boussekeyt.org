@@ -26,6 +26,15 @@
                     links[i].target = '_blank'
                 }
             }
+
+           var links = document.querySelectorAll('.article.content a.source-btn')
+
+            for (var i = 0; i < links.length; i++) {
+                if (links[i].href.indexOf('mailto') === -1) {
+                    links[i].href = 'view-source:' + links[i].href
+                }
+            }
+
         }
     }, 10)
 </script>

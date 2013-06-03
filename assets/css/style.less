@@ -1,5 +1,6 @@
 @import "../bootstrap/less/bootstrap.less";
 @import "syntax.less";
+@import "examples.less";
 
 .tag-frontend hgroup { background-color: teal; }
 .tag-backend hgroup { background-color: #B11623; }
@@ -91,6 +92,22 @@ hgroup {
     strong, b {
         color: #666;
     }
+
+    .post-buttons {
+        text-align: center;
+
+        a {
+            margin: 40px 10px 20px 10px;
+        }
+
+        .demo-btn {
+            .button;
+        }
+
+        .source-btn {
+            .button;
+        }
+    }
 }
 
 
@@ -141,4 +158,11 @@ hgroup {
     }
 }
 
+.qr {
+    .alert;
+    .alert-small;
+    .warning;
 
+    .question { }
+    .answer {}
+}
