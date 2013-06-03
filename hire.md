@@ -23,9 +23,9 @@ I'm a PHP and Javascript developer. I enjoy building web-applications.
 
 ## Previously
 
-I've been a programmer for 5 years, getting my start in a e-commerce. Recently I've work in both big 
-companies ([SensioLabs](http://sensiolabs.com)) and the smallest of startups ([Twitspark](http://www.twitspark.com), [Everlution](http://everlution.com), [Wisembly](http://votrequestion.com)). I've also done some 
-side projects. I now working mainly with Javascript using Backbone.js, Require.js, Mocha, Node.js; although 
+I've been doing web programming since 2008, getting my start in a e-commerce. Recently I worked for 
+agencies ([SensioLabs](http://sensiolabs.com), [Everlution](http://everlution.com)) and startups ([Twitspark](http://www.twitspark.com), [Wisembly](http://votrequestion.com)). I've also done some 
+side projects. I'm now working mainly with Javascript using Backbone.js, Require.js, Node.js; although 
 I still enjoy doing some PHP.
 
 
@@ -52,6 +52,7 @@ improve your existing software, or help you with difficult tasks.
     <li><a>Debian</a></li>
     <li><a>CSS3</a></li>
     <li><a>HTML5</a></li>
+    <li><a>REST Api</a></li>
 </ul>
 
 
