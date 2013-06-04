@@ -65,7 +65,7 @@ var db = {
 ## Create a global event listener with Backbone.Events
 
 In BackboneJS, each `Backbone.View`, `Backbone.Model`, `Backbone.Collection`, 
-`Backbone.Router`n `Backbone.History` prototypes inherits from `Backbone.Events`, 
+`Backbone.Router` and `Backbone.History` prototypes inherits from `Backbone.Events`, 
 and it further means you have access to `on()`, `off()`, `trigger()` methods to manage your events.
 
 The main problem with this approach is you have multiple listener instances. If you 

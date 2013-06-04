@@ -6,9 +6,9 @@ title: CSS3 Mobile Application Layout using Less
 
 
 
-Main purpose of this post is to create a CSS3 animation to slide pages horizontaly. Below a 
-mobile app with 3 pages on 3 different levels (a level is like a sub-menu). Animation is created 
-by switching `current` class alternatively on each level:
+The main purpose of this post is to create a CSS3 animation in which pages will slide horizontaly. Below is a 
+mobile application with three pages on three different levels (a level is like a sub-menu). The animation is created 
+by switching the `current` class alternatively on each level:
 
 <div class="iphone">
     <div class="crop">
@@ -34,7 +34,7 @@ by switching `current` class alternatively on each level:
     <a class="source-btn" href="/assets/examples/mobile-layout.html" target="_blank">Source</a>
 </div>
 
-## Create a sliding effect between pages
+## Creating a sliding effect between pages
 
 Here's a simple example on two pages:
 
@@ -56,7 +56,7 @@ Here's a simple example on two pages:
 </div>
 
 
-Here's our CSS code (basically):
+Here's our basic CSS code:
 
 ```css
 .level { transition: transform 1s linear; }
@@ -67,13 +67,13 @@ Here's our CSS code (basically):
 .level.current { .translate(0, 0); }
 ```
 
-To get this result we toggle `current` class alternatively on `.level-0` and `.level-1`.
+To get this result, we toggle `current` class alternately on both `.level-0` and `.level-1`.
 
 
 ##Adding other levels
 
-Now we have a two levels's animation working we might want to add a third level, things start to be more difficult.
-Using CSS code of previous example, here's a 3 levels animation:
+Now we have a two levels animation working we might want to add a third level, But at this stage, things start 
+to become more difficult. Using the CSS code of the previous example, here's a three-level animation:
 
 <div class="example example-2 example-simple">
     <div class="crop">
@@ -94,13 +94,13 @@ Using CSS code of previous example, here's a 3 levels animation:
     </script>
 </div>
 
-There's a glitch, do you see it ? __level 1__ always slides on the right, it should slides 
-one time on the left the other time on the right. To achieve this we need to figure out the good
-sliding direction (left or right). However the problem only applies to __level 1__ because __level 0__ and __level 2__ 
-always slide on the same direction.
+There's a glitch - do you see it? __Level 1__ always slides to the right when it should slide 
+one time to the left the other time to the right. To achieve this, we need to figure out the correct
+sliding direction (left or right). However, the problem only applies to __level 1__ because __level 0__ and __level 2__ 
+always slide in the same directions.
 
-For __level 1__, if current level is higher we need to slide it left, else slide it right. Here're our 
-rules graphically represented:
+For __level 1__, if the current level is a higher level, we need to slide __level 1__ to the left. Otherwise, it
+should slide to the right. Here are our rules, graphically represented:
 
 <div class="example example-3">
     <div class="crop crop-right example-down">
@@ -135,9 +135,9 @@ rules graphically represented:
 </div>
 
 
-## Determine sliding direction
+## Determining the sliding direction
 
-One simple rule four our HTML structure, lower levels are before higher levels:
+One simple rule for our HTML structure, lower levels come before higher levels:
 
 ```html
 <!-- good -->
@@ -153,24 +153,25 @@ One simple rule four our HTML structure, lower levels are before higher levels:
 
 
 
-To determine sliding direction of a level we need to determine if current level is higher or lower. And following
-our HTML structure if current level is higher then it's a next sibling else a previous sibling.
+To decide a level's sliding direction, we need to determine whether the current level is higher or lower. And following 
+our HTML structure, if the current level is higher than the level in question, then the current level is a 'next' sibling.
+Otherwise, it's a 'previous' sibling.
+
+To match preceding elements, we use [`~` selector](http://www.w3.org/TR/selectors/#general-sibling-combinators).
+But there's no CSS3 selector to match on element followed by another. Fortunately - and we can never repeat it often 
+enough - the 'C' in CSS stands for 'cascading', so we can assume by default that every level is followed by the current 
+level and then the other cases can be matched.
 
 
-To match preceding elements we use [`~` selector](http://www.w3.org/TR/selectors/#general-sibling-combinators).
-But there's no CSS3 selector to match elements followed by an other. Fortunately we can never repeat it often enough, 
-"C" in CSS stands for cascading, we can assume by default, every level is followed by current level, then match other cases.
+Still keeping with our example using __level 1__ (where the respective selector is `.level-1`), here are the three cases:
 
 
-Still keeping our example with __level 1__ (respective selector is `.level-1`), 3 cases:
+- Current level is higher: slide it left - CSS selector is `.level-1` [use cascading].
+- Current level is same: keep it centered - CSS selector is `.level-1.current`.
+- Current level is lower: slide it right - CSS selector is `.current ~ .level-1 `.
 
 
-- current level is higher - slide it left - CSS selector is `.level-1` [use cascading]
-- current level is same - keep it centered - CSS selector is `.level-1.current`
-- current level is lower - slide it right - CSS selector is `.current ~ .level-1 `
-
-
-Our CSS now become:
+Our CSS has now become:
 
 ```css
 /* match .level-1 when current level is higher */
@@ -184,7 +185,7 @@ Our CSS now become:
 
 ```
 
-And our previous example is now working:
+And our previous incorrect animation is now working:
 
 <div class="example example-4 example-working">
     <div class="crop">
@@ -206,14 +207,14 @@ And our previous example is now working:
 </div>
 
 
-## Adding Less godness
+## Adding Less
 
-Now we have a fully working animation we might want to know if it's robust. Is adding 
-a new level automatically managed ? Short answer: no, you have to write 3 css rules for each level, so 
-we might consider using Less to avoid code duplication.
+Now we have a fully working animation, it's a good idea to find out if it's robust. Is the new level we've added 
+automatically managed? The short answer is 'No'. We'll have to write three CSS rules for each level. In that case, 
+it would be reasonable to consider using LESS to avoid code duplication.
 
 
-First thing to know is the creation of a loop using less, here's an example:
+The first thing to do is to create of a loop using LESS. Here's an example:
 
 ```css
 // loop range
@@ -233,7 +234,7 @@ First thing to know is the creation of a loop using less, here's an example:
 .level(@maxLevel);
 ```
 
-Compiling above Less into CSS, will generate:
+Compiling the above LESS code into CSS, will generate:
 
 
 ```css
@@ -242,7 +243,7 @@ Compiling above Less into CSS, will generate:
 .level-0 { color: red; }
 ```
 
-Now going back to our animation, we can define following mixin:
+Going back to our animation, we can define the following mixin:
 
 ```css
 @maxLevel: 3;
@@ -275,7 +276,7 @@ Now going back to our animation, we can define following mixin:
 .level(@maxLevel);
 ```
 
-Compiling above Less into CSS will generate:
+Compiling the above LESS code into CSS now generate:
 
 ```css
 .level-0 {              transform: translateX(-100%); }
@@ -295,5 +296,5 @@ Compiling above Less into CSS will generate:
     <a href="https://github.com/twitter/bootstrap/blob/master/less/mixins.less#L293"><code>translate()</code> mixin</a>.
 </div>
 
-Now you're done, we can now adjust `@maxLevel` to suit our needs.
-[See fully working example](/assets/examples/mobile-layout.html)
+Now we're done. We can now adjust `@maxLevel` to suit our needs.
+[See fully working example](/assets/examples/mobile-layout.html).
