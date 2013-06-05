@@ -183,7 +183,7 @@ workaround to avoid the error is to use `this.$el.find('.selector')` instead of 
 ## Search in models and collections
 
 
-To know if one of a model's attributes match a pattern, we can create a new method called 'model.match(/exp/)':
+To know if one of a model's attributes match a pattern, we can create a new method called `model.match(/exp/)`:
 
 
 ```javascript
@@ -203,7 +203,7 @@ console.log(model1.match(/Jo/)) // true
 console.log(model2.match(/Jo/)) // true
 ```
 
-We can do the same for collections with 'coll.search(/exp/)' to allow filtering of models:
+We can do the same for collections with `coll.search(/exp/)` to allow filtering of models:
 
 
 ```javascript
