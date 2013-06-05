@@ -130,11 +130,12 @@ Backbone.View.prototype.eventAggregator = _.extend({}, Backbone.Events);
 var view1 = new Backbone.View()
 var view2 = new Backbone.View()
 
-view1.on('disconnect', function() {
+view1.eventAggregator.on('disconnect', function() {
     console.log('view1 disconnected')
 })
 
-view2.trigger('disconnect') // 'view1 disconnected'
+view2.trigger('disconnect') // (nothing)
+view2.eventAggregator.trigger('disconnect') // 'view1 disconnected'
 ```
 
 
