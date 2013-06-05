@@ -256,5 +256,5 @@ Backbone.history.start()
 router.navigate('') // 'before' 'index' 'after'
 ```
 
-
-
+That's all, don't forget to read [backbone.js tips and tricks](/2012/backbonejs-tips-tricks.html) 
+if you've not already done.
