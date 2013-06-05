@@ -103,7 +103,7 @@ Backbone.Collection.prototype._super = function(funcName){
 ```
 
 
-### Identify 'console.log' in a view 
+## Identify 'console.log' in a view 
 
 Think of a list of items in which each item is represented by a single view. Our view is called `ItemView` and 
 we instanciate it with the number of items we have. Now if we do a `console.log` inside one of those views, we can't 
@@ -180,7 +180,7 @@ But sometimes we want to find an element even if it doesn't exist and it's a val
 workaround to avoid the error is to use `this.$el.find('.selector')` instead of `this.$('.selector')`.
 
 
-### Search in models and collections
+## Search in models and collections
 
 
 To know if one of a model's attributes match a pattern, we can create a new method called 'model.match(/exp/)':
