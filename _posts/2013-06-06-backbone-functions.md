@@ -26,12 +26,10 @@ Backbone.View.prototype.template = function(tmpl, params) {
 }
 
 Backbone.View.extend({
-
     render: function() {
         // will call our template engine without know which one it is
         this.template(tmplStr, {})
     }
-
 })
 ```
 
@@ -68,14 +66,12 @@ never forget to call parent's `remove()` method:
 
 ```javascript
 Backbone.View.extend({
-
     remove: function() {
         // ... custom logic
 
         // call parent remove()
         this.constructor.__super__.remove.apply(this, arguments)
     }
-
 })
 ```
 
@@ -83,16 +79,13 @@ Calling parent's `remove()` method is ugly and difficult to remember; the idea i
 
 ```javascript
 Backbone.View.extend({
-
     remove: function() {
         // ... custom logic
 
         // call parent remove()
         this._super('remove', arguments)
     }
-
 })
-
 
 Backbone.Model.prototype._super =
 Backbone.View.prototype._super =
@@ -134,7 +127,6 @@ will be dispatched among all views:
 ```javascript
 Backbone.View.prototype.eventAggregator = _.extend({}, Backbone.Events);
 
-
 var view1 = new Backbone.View()
 var view2 = new Backbone.View()
 
@@ -165,13 +157,11 @@ Backbone.View.prototype.$ = function(selector) {
 }
 
 Backbone.View.extend({
-
     initialize: function() {
         // obviously .foo element do not yet exists because view is not rendered
         this.$('.foo') // [Backbone.View] Warning: selector '.foo' do not match any element
             .text('foo-bar-baz') 
     }
-
 })
 
 ```
@@ -213,7 +203,6 @@ Backbone.Collection.prototype.search = function(test) {
     })
 }
 
-
 var coll = new Backbone.Collection([model1, model2])
 
 console.log(coll.search('Jordan').first().get('last_name')) // Aslam
@@ -235,7 +224,6 @@ var $route = Backbone.Router.prototype.route
 Backbone.Router.prototype.before = function() {}
 Backbone.Router.prototype.after = function() {}
 Backbone.Router.prototype.route = function(route, name, callback) {
-
     if (_.isFunction(name)) {
         callback = name
         name = ''
