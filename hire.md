@@ -55,6 +55,10 @@ improve your existing software, or help you with difficult tasks.
     <li><a>Node.js</a></li>
 </ul>
 
+## Personal projects
+
+- [I created a Conway's Game of Life using a `<canvas>` element](http://grdnlndn.github.io/game-of-life/)
+
 
 ## Find me on the web
 
