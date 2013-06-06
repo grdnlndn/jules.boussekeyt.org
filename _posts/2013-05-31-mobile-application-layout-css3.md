@@ -30,8 +30,8 @@ by switching the `current` class alternatively on each level:
 
 
 <div class="post-buttons">
-    <a class="demo-btn" href="/assets/examples/mobile-layout.html" target="_blank">Demo</a>
-    <a class="source-btn" href="/assets/examples/mobile-layout.html" target="_blank">Source</a>
+    <a class="demo-btn" href="/examples/mobile-layout.html" target="_blank">Demo</a>
+    <a class="source-btn" href="/examples/mobile-layout.html" target="_blank">Source</a>
 </div>
 
 ## Creating a sliding effect between pages
@@ -297,4 +297,4 @@ Compiling the above LESS code into CSS now generate:
 </div>
 
 Now we're done. We can now adjust `@maxLevel` to suit our needs.
-[See fully working example](/assets/examples/mobile-layout.html).
+[See fully working example](/examples/mobile-layout.html).

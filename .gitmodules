@@ -1,3 +1,6 @@
 [submodule "assets/bootstrap"]
 	path = assets/bootstrap
 	url = git@github.com:gordonslondon/CssBootstrap.git
+[submodule "game-of-life"]
+	path = game-of-life
+	url = git@github.com:grdnlndn/game-of-life.git

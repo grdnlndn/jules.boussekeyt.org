@@ -8,3 +8,4 @@ safe: true
 permalink: /:year/:title.html
 pygments: true
 markdown: redcarpet
+include: ['examples', 'game-of-life']
