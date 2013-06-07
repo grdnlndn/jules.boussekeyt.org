@@ -34,7 +34,7 @@ See for instance,  the [_.find()](http://underscorejs.org/#find) function:
 function findByName(name) {
     var found
     for (var i = 0; i < users.length; i++) {
-        var user = users[i
+        var user = users[i]
         if (user.name === name) {
             found = user
             break
@@ -49,8 +49,7 @@ function findByName(name) {
         return user.name === name
     })
 }
-``
-
+```
 
 ## Get full name of each user
 
