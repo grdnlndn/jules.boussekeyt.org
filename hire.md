@@ -58,6 +58,7 @@ improve your existing software, or help you with difficult tasks.
 ## Personal projects
 
 - [I created a Conway's Game of Life using a `<canvas>` element](/game-of-life)
+- [Online Javascript Regex tester](/js-regex-tester)
 
 
 ## Find me on the web

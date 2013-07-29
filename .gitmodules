@@ -4,3 +4,6 @@
 [submodule "game-of-life"]
 	path = game-of-life
 	url = git@github.com:grdnlndn/game-of-life.git
+[submodule "js-regex-tester"]
+	path = js-regex-tester
+	url = git@github.com:grdnlndn/js-regex-tester.git
