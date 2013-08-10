@@ -19,7 +19,7 @@ if necessary:
 
 Backbone.View.prototype.template = function(tmpl, params) {
     // use handlebars
-    return tmpl(param)
+    return tmpl(params)
 
     // use underscore
     return _.template(tmpl, params)
